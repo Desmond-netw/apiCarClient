@@ -1,0 +1,89 @@
+{{define "title"}} viewer {{end}} {{define "content"}}
+<h2>{{.Title}}</h2>
+
+<!-- -------------- Viewing Filtered Categories and Manufacturers -->
+
+<div class="homedata">
+    <div class="categoryWrapper">
+        <div class="cat-card"> 
+            {{range .FilteredCategories}}
+                <a class="cat-Item" href="/categories/{{.ID}}">{{.Name}}</a>
+            {{end}}
+        </div>
+    </div>
+    <div class="manufacturerWrapper">
+        <div class="manu-card">
+            {{range .FilteredManufacturers}}
+                <a class="manu-items" href="/manufacturers/{{.ID}}">{{.Name}}</a>
+            {{end}}
+        </div>
+    </div>
+</div>
+
+<!-- ------------------- -->
+ <!--      Car Models Views -->
+ <!-- --------------------- -->
+
+{{if .Models}}
+<div class="carContainer">
+{{range .Models}}
+    <div class="carWrapper" >
+        <h3>{{.Name}} ({{.Year}})</h3>
+        <p>
+            <strong>Maufacturer :</strong> {{.ManufacturerName}} <br>
+            <strong>Category :</strong> {{.CategoryName}} 
+        </p>
+
+        <h4>Specifications</h4>
+        <ul>
+            <li>Engine: {{.Specifications.Engine}}</li>
+            <li>Horsepower: {{.Specifications.Horsepower}} HP</li>
+            <li>Transmission: {{.Specifications.Transmission}}</li>
+            <li>Drivetrain: {{.Specifications.Drivetrain}}</li>
+        </ul>
+        {{if .Image}}
+            <img src="http://localhost:3000/api/images/{{.Image }}" width="200" height="200" >
+        {{end}}
+    </div>
+{{end}} 
+</div>
+{{end}} <!-- end range models-->
+
+
+<!-- ------------------- -->
+ <!--     Manufacturers Views -->
+ <!-- --------------------- -->
+{{if .Manufacturers}}
+    <table  >
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Founded</th>
+        </tr>
+        {{range .Manufacturers}} 
+            <tr>
+                <td>{{ .Name}}</td>
+                <td>{{ .Country}}</td>
+                <td>{{ .FoundingYear}}</td>
+            </tr>
+        {{end}}
+    </table>
+{{end}} <!-- End of Manufacturers-->
+<!-- ----------- -->
+ <!-- ------------------- -->
+ <!--      Car Models -->
+ <!-- --------------------- -->
+ {{if .Categories}}
+    <table>
+        <tr>
+            <th>Name</th>
+        </tr>
+        {{range .Categories}}
+            <tr>
+                <td>{{.Name}}
+                </td>
+            </tr>
+        {{end}}
+    </table>
+{{end}}
+{{end}} <!-- end define content-->

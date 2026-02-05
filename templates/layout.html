@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <!-- Link -->
+     <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+     <header>
+        <div class="search">
+            <!-- search -->
+             <input type="search" placeholder="search ..">
+        </div>
+     </header>
+    <main>
+        <ul class="menuBar">
+           <li><a href="/">Home</a></li>
+           <li><a href="/manufacturers">Manufacturers</a></li>
+           <li><a href="/models">Car Models</a></li>
+           <li><a href="/categories">Categories</a></li>
+        </ul>
+        <div class="homepage">
+            <div>
+                <div class="HeroPage">
+                    <div class="home_car_Card"></div>
+                </div>
+                <h2> Start Browsing Cars by Category and Manufacturers</h2>
+
+            </div>
+
+        </div>
+            {{template  "content".}}
+    </main>
+     <footer>
+        <p>Crafted with GO | 2025 projects | Developer: Desmond</p>
+     </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+/* ALL root  */
+:root {
+    /* Primary Palette */
+    --primary: #232126;
+    --primary-light: #a9b4fa;
+    --accent: #8575c5;
+    --blue-deep: #4158D0;
+    --purple-magenta: #C850C0;
+
+    /* Backgrounds */
+    --bg-gradient: linear-gradient(120deg, #fcf7ff 0%, #f0f7ff 100%);
+    --bg-textarea: #f4f1ff;
+    --offwhite: #f8f7fd;
+    --output-bg: #ede9ff;
+
+    /* Text Colors */
+    --text-dark: #222;
+    --text-light: #555;
+    --text-muted: #888;
+
+    /* Status Colors */
+    --error: #f2526e;
+
+    /* Fonts */
+    --font-sans: 'Inter', 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Mono', 'Consolas', monospace;
+
+    /* Spacing Scale */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --grid-padding: 40px;
+
+    /* Radii */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.15);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.18);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+
+    /* Layout */
+    --container-max: 1200px;
+}
+
+/* -------- Global reset -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #000;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+    
+}
+
+/* -------- Header -------- */
+header {
+    background-color: #222121;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* -------- Main layout -------- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* -------- Menu Bar -------- */
+.menuBar {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 12px 20px;
+    background-color: #1e293b;
+    border-radius: 8px;
+}
+
+/* Menu items */
+.menuBar li {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu links */
+.menuBar li a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #e5e7eb;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect */
+.menuBar li a:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+/* -- Contents csss */
+.carContainer {
+     display: grid;
+     grid-template-columns:auto auto;
+     gap: 20px;
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 20px;
+     background-color: dodgerblue;
+}
+.container .carWrapper {
+     background-color: #f1f1f1;
+     border: 1px solid #ddd;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 2px 6px rgba(0, 0,0, 0.1);
+     
+}
+

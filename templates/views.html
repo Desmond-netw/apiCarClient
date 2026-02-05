@@ -20,34 +20,7 @@
     </div>
 </div>
 
-<!-- ------------------- -->
- <!--      Car Models Views -->
- <!-- --------------------- -->
 
-{{if .Models}}
-<div class="carContainer">
-{{range .Models}}
-    <div class="carWrapper" >
-        <h3>{{.Name}} ({{.Year}})</h3>
-        <p>
-            <strong>Maufacturer :</strong> {{.ManufacturerName}} <br>
-            <strong>Category :</strong> {{.CategoryName}} 
-        </p>
-
-        <h4>Specifications</h4>
-        <ul>
-            <li>Engine: {{.Specifications.Engine}}</li>
-            <li>Horsepower: {{.Specifications.Horsepower}} HP</li>
-            <li>Transmission: {{.Specifications.Transmission}}</li>
-            <li>Drivetrain: {{.Specifications.Drivetrain}}</li>
-        </ul>
-        {{if .Image}}
-            <img src="http://localhost:3000/api/images/{{.Image }}" width="200" height="200" >
-        {{end}}
-    </div>
-{{end}} 
-</div>
-{{end}} <!-- end range models-->
 
 
 <!-- ------------------- -->

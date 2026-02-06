@@ -1,10 +1,11 @@
-{{define "title"}} viewer {{end}} {{define "content"}}
+{{define "home"}}
 <h2>{{.Title}}</h2>
 
 <!-- -------------- Viewing Filtered Categories and Manufacturers -->
 
 <div class="homedata">
     <div class="categoryWrapper">
+        <h2>Explore More cars by Their Category</h2>
         <div class="cat-card"> 
             {{range .FilteredCategories}}
                 <a class="cat-Item" href="/categories/{{.ID}}">{{.Name}}</a>
@@ -12,6 +13,7 @@
         </div>
     </div>
     <div class="manufacturerWrapper">
+        <h2> Explore our cars by Their Manufactures</h2>
         <div class="manu-card">
             {{range .FilteredManufacturers}}
                 <a class="manu-items" href="/manufacturers/{{.ID}}">{{.Name}}</a>
@@ -21,42 +23,8 @@
 </div>
 
 
-
-
-<!-- ------------------- -->
- <!--     Manufacturers Views -->
- <!-- --------------------- -->
-{{if .Manufacturers}}
-    <table  >
-        <tr>
-            <th>Name</th>
-            <th>Country</th>
-            <th>Founded</th>
-        </tr>
-        {{range .Manufacturers}} 
-            <tr>
-                <td>{{ .Name}}</td>
-                <td>{{ .Country}}</td>
-                <td>{{ .FoundingYear}}</td>
-            </tr>
-        {{end}}
-    </table>
-{{end}} <!-- End of Manufacturers-->
 <!-- ----------- -->
- <!-- ------------------- -->
- <!--      Car Models -->
- <!-- --------------------- -->
- {{if .Categories}}
-    <table>
-        <tr>
-            <th>Name</th>
-        </tr>
-        {{range .Categories}}
-            <tr>
-                <td>{{.Name}}
-                </td>
-            </tr>
-        {{end}}
-    </table>
-{{end}}
+
+
 {{end}} <!-- end define content-->
+{{template "layout" . }}  <!-- Inject this block to template layout-->

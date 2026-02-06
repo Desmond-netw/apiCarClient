@@ -1,8 +1,8 @@
 <!-- ------------------- -->
  <!--      Car Models Views -->
  <!-- --------------------- -->
-
-{{if .Models}}
+{{ define "content" }}
+<h2>{{ .Title }}</h2>
 <div class="carContainer">
 {{range .Models}}
     <div class="carWrapper" >
@@ -23,6 +23,8 @@
             <img src="http://localhost:3000/api/images/{{.Image }}" width="200" height="200" >
         {{end}}
     </div>
-{{end}} 
+    {{end}}
 </div>
-{{end}} <!-- end range models-->
+{{end}} 
+
+{{template "layout" . }}
